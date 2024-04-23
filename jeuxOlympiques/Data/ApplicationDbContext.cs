@@ -1,4 +1,5 @@
-﻿using Microsoft.EntityFrameworkCore;
+﻿using jeuxOlympiques.Models;
+using Microsoft.EntityFrameworkCore;
 
 namespace jeuxOlympiques.Data
 {
@@ -8,5 +9,7 @@ namespace jeuxOlympiques.Data
         {
             
         }
+
+        public DbSet<Category> Categories { get; set; }
     }
 }
