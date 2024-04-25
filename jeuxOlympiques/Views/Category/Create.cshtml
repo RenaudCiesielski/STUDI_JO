@@ -1,0 +1,24 @@
+﻿@model Category
+
+<form method="post">
+    <div class="border p-3 mt-4">
+        <div class="row pb-2">
+            <h2 class="text-primary">Créer nouveau ticket</h2>
+            <hr/>
+        </div>
+        <div class="mb-3">
+            <label>Catégorie ticket</label>
+            <input type="text" class="form-control"/>
+        </div>
+        <div class="mb-3">
+            <label>Description</label>
+            <input type="text" class="form-control"/>
+        </div>
+        <div class="mb-3">
+            <label>Prix</label>
+            <input type="text" class="form-control"/>
+        </div>
+        <button type="submit" class="btn btn-success" style="width:100px">Valider</button>
+        <a asp-controller="Category" asp-action="Index" class="btn btn-danger" style="width:150px">Revenir à la liste</a>
+    </div>
+</form>
