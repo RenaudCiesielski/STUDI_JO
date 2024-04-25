@@ -6,19 +6,28 @@
             <h2 class="text-primary">Créer nouveau ticket</h2>
             <hr/>
         </div>
-        <div class="mb-3">
-            <label>Catégorie ticket</label>
-            <input type="text" class="form-control"/>
+        <div class="mb-3 row p-1">
+            <label asp-for="Name" class="p-0"></label>
+            <input asp-for="Name" class="form-control"/>
+            <span asp-validation-for="Name" class="text-danger"></span>
         </div>
-        <div class="mb-3">
-            <label>Description</label>
-            <input type="text" class="form-control"/>
+        <div class="mb-3 row p-1">
+            <label asp-for="Description" class="p-0"></label>
+            <input asp-for="Description" class="form-control"/>
+            <span asp-validation-for="Description" class="text-danger"></span>
         </div>
-        <div class="mb-3">
-            <label>Prix</label>
-            <input type="text" class="form-control"/>
+        <div class="mb-3 row p-1">
+            <label asp-for="Price" class="p-0"></label>
+            <input asp-for="Price" class="form-control"/>
+            <span asp-validation-for="Price" class="text-danger"></span>
         </div>
-        <button type="submit" class="btn btn-success" style="width:100px">Valider</button>
-        <a asp-controller="Category" asp-action="Index" class="btn btn-danger" style="width:150px">Revenir à la liste</a>
+        <div class="row col-md-4">
+            <div class="col-6">
+                <a asp-controller="Category" asp-action="Index" class="btn btn-danger border form-control">Revenir à la liste</a>
+            </div>
+            <div class="col-6">
+                <button type="submit" class="btn btn-success border form-control">Valider</button>
+            </div>            
+        </div>
     </div>
 </form>
