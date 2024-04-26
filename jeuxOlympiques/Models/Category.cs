@@ -19,8 +19,8 @@ namespace jeuxOlympiques.Models
         public string Description { get; set; }
 
 
-        [DisplayName("Prix")]
-        [MinLength(1)]
+        [DisplayName("Prix en €")]
+        [Range(1,9999, ErrorMessage ="Le prix ne peut pas être inférieur à 1€ et supérieur à 9999€")]
         public int Price { get; set; }
     }
 }
