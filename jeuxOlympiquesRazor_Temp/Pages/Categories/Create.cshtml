@@ -1,0 +1,41 @@
+﻿@page
+@model jeuxOlympiquesRazor_Temp.Pages.Categories.CreateModel
+
+<form method="post">
+    <div class="border p-3 mt-4">
+        <div class="row pb-2">
+            <h2 class="text-body-tertiary">Créer nouveau ticket</h2>
+            <hr/>
+        </div>
+        <div asp-validation-summary="All"></div>
+        <div class="mb-3 row p-2">
+            <label asp-for="Category.Name" class="p-0"></label>
+            <input asp-for="Category.Name" class="form-control" />
+            <span asp-validation-for="Category.Name" class="text-danger"></span>
+        </div>
+        <div class="mb-3 row p-2">
+            <label asp-for="Category.Description" class="p-0"></label>
+            <input asp-for="Category.Description" class="form-control" />
+            <span asp-validation-for="Category.Description" class="text-danger"></span>
+        </div>
+        <div class="mb-3 row p-2">
+            <label asp-for="Category.Price" class="p-0"></label>
+            <input asp-for="Category.Price" class="form-control" />
+            <span asp-validation-for="Category.Price" class="text-danger"></span>
+        </div>
+        <div class="row col-md-4">
+            <div class="col-6">
+                <a asp-page="/categories/index" class="btn btn-danger border form-control">Revenir à la liste</a>
+            </div>
+            <div class="col-6">
+                <button type="submit" class="btn btn-success border form-control">Valider</button>
+            </div>            
+        </div>
+    </div>
+</form>
+
+            @section Scripts{
+                @{
+                    <partial name="_ValidationScriptsPartial"/>
+                }
+            }
