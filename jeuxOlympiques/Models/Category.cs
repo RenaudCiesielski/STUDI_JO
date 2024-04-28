@@ -15,7 +15,7 @@ namespace jeuxOlympiques.Models
 
 
         [DisplayName("Description")]
-        [MinLength(10)]
+        [MinLength(3)]
         public string Description { get; set; }
 
 
