@@ -7,14 +7,14 @@ namespace jeuxOlympiques.Controllers
 {
     public class CategoryController : Controller
     {
-        private readonly ICategoryRepository _categoryRepo;
-        public CategoryController(ICategoryRepository db)
+        private readonly IUnitOfWork _unitOfWork;
+        public CategoryController(IUnitOfWork unitOfWork)
         {
-            _categoryRepo = db; 
+            _unitOfWork = unitOfWork; 
         }
         public IActionResult Index()
         {
-            List<Category> objCategoryList = _categoryRepo.GetAll().ToList();
+            List<Category> objCategoryList = _unitOfWork.Category.GetAll().ToList();
             return View(objCategoryList);
         }
 
@@ -28,8 +28,8 @@ namespace jeuxOlympiques.Controllers
         {
             if (ModelState.IsValid)
             {
-                _categoryRepo.Add(obj);
-                _categoryRepo.Save();
+                _unitOfWork.Category.Add(obj);
+                _unitOfWork.Save();
                 TempData["success"] = "Ticket créé avec succès";
                 return RedirectToAction("Index");
             }
@@ -43,7 +43,7 @@ namespace jeuxOlympiques.Controllers
             {
                 return NotFound();
             }
-            Category? categoryFromDb = _categoryRepo.Get(u=>u.Id==id);
+            Category? categoryFromDb = _unitOfWork.Category.Get(u=>u.Id==id);
 
             if(categoryFromDb == null)
             {
@@ -57,8 +57,8 @@ namespace jeuxOlympiques.Controllers
         {
             if (ModelState.IsValid)
             {
-                _categoryRepo.Update(obj);
-                _categoryRepo.Save();
+                _unitOfWork.Category.Update(obj);
+                _unitOfWork.Save();
                 TempData["success"] = "Vous avez modifié le ticket";
                 return RedirectToAction("Index");
             }
@@ -72,7 +72,7 @@ namespace jeuxOlympiques.Controllers
             {
                 return NotFound();
             }
-            Category? categoryFromDb = _categoryRepo.Get(u => u.Id == id);
+            Category? categoryFromDb = _unitOfWork.Category.Get(u => u.Id == id);
 
             if (categoryFromDb == null)
             {
@@ -84,14 +84,14 @@ namespace jeuxOlympiques.Controllers
         [HttpPost, ActionName("Delete")]
         public IActionResult DeletePOST(int? id)
         {
-            Category? obj = _categoryRepo.Get(u => u.Id == id);
+            Category? obj = _unitOfWork.Category.Get(u => u.Id == id);
             if (obj == null)
             {
                 return NotFound();
-            }             
-                _categoryRepo.Remove(obj);
-                _categoryRepo.Save();
-            TempData["success"] = "Ticket supprimé";
+            }
+                _unitOfWork.Category.Remove(obj);
+                _unitOfWork.Save();
+                TempData["success"] = "Ticket supprimé";
                 return RedirectToAction("Index");
         }         
     }
