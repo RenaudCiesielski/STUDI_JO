@@ -1,7 +1,7 @@
-﻿using jeuxOlympiques.Models;
+﻿using JO.Models;
 using Microsoft.EntityFrameworkCore;
 
-namespace jeuxOlympiques.Data
+namespace JO.DataAccess.Data
 {
     public class ApplicationDbContext : DbContext
     {

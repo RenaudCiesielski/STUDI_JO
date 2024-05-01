@@ -1,7 +1,7 @@
 ﻿using System.ComponentModel;
 using System.ComponentModel.DataAnnotations;
 
-namespace jeuxOlympiques.Models
+namespace JO.Models
 {
     public class Category
     {

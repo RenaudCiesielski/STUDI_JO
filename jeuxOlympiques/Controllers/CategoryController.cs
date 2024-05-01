@@ -1,7 +1,6 @@
-﻿using jeuxOlympiques.Data;
-using jeuxOlympiques.Models;
+﻿using JO.DataAccess.Data;
+using JO.Models;
 using Microsoft.AspNetCore.Mvc;
-using Microsoft.EntityFrameworkCore;
 
 namespace jeuxOlympiques.Controllers
 {

@@ -1,4 +1,4 @@
-using jeuxOlympiques.Models;
+using Jo.Models;
 using Microsoft.AspNetCore.Mvc;
 using System.Diagnostics;
 

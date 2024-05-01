@@ -1,4 +1,4 @@
-using jeuxOlympiques.Data;
+using JO.DataAccess.Data;
 using Microsoft.EntityFrameworkCore;
 
 var builder = WebApplication.CreateBuilder(args);

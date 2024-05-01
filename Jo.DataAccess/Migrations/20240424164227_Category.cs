@@ -2,7 +2,7 @@
 
 #nullable disable
 
-namespace jeuxOlympiques.Migrations
+namespace JO.DataAccess.Migrations
 {
     /// <inheritdoc />
     public partial class Category : Migration

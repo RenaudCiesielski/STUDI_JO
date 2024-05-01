@@ -5,11 +5,15 @@ VisualStudioVersion = 17.9.34728.123
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "jeuxOlympiques", "jeuxOlympiques\jeuxOlympiques.csproj", "{E490B043-39AD-4D91-A109-5C89B548784C}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Jo.DataAccess", "Jo.DataAccess\Jo.DataAccess.csproj", "{21039FC2-BA23-4864-9830-7901D305125A}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Jo.DataAccess", "Jo.DataAccess\Jo.DataAccess.csproj", "{21039FC2-BA23-4864-9830-7901D305125A}"
+	ProjectSection(ProjectDependencies) = postProject
+		{1A9D8951-8E32-4937-866E-B49CE683B7C0} = {1A9D8951-8E32-4937-866E-B49CE683B7C0}
+		{B0757B1A-996B-4CD6-9664-0D4601334EAC} = {B0757B1A-996B-4CD6-9664-0D4601334EAC}
+	EndProjectSection
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Jo.Models", "Jo.Models\Jo.Models.csproj", "{1A9D8951-8E32-4937-866E-B49CE683B7C0}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Jo.Models", "Jo.Models\Jo.Models.csproj", "{1A9D8951-8E32-4937-866E-B49CE683B7C0}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Jo.Utility", "Jo.Utility\Jo.Utility.csproj", "{B0757B1A-996B-4CD6-9664-0D4601334EAC}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Jo.Utility", "Jo.Utility\Jo.Utility.csproj", "{B0757B1A-996B-4CD6-9664-0D4601334EAC}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

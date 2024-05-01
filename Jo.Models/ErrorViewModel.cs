@@ -1,4 +1,4 @@
-namespace jeuxOlympiques.Models
+namespace Jo.Models
 {
     public class ErrorViewModel
     {

@@ -4,15 +4,15 @@ using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
 using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
-using jeuxOlympiques.Data;
+using JO.DataAccess.Data;
 
 #nullable disable
 
-namespace jeuxOlympiques.Migrations
+namespace JO.DataAccess.Migrations
 {
     [DbContext(typeof(ApplicationDbContext))]
-    [Migration("20240424104726_SeedCategoryTable")]
-    partial class SeedCategoryTable
+    [Migration("20240423165031_AddCategoryTableToDb")]
+    partial class AddCategoryTableToDb
     {
         /// <inheritdoc />
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
@@ -46,29 +46,6 @@ namespace jeuxOlympiques.Migrations
                     b.HasKey("Id");
 
                     b.ToTable("Categories");
-
-                    b.HasData(
-                        new
-                        {
-                            Id = 1,
-                            Description = "Ce ticket est valable pour 1 personne",
-                            DisplayOrder = 1,
-                            Name = "Ticket Solo"
-                        },
-                        new
-                        {
-                            Id = 2,
-                            Description = "Ce ticket est valable pour 2 personnes",
-                            DisplayOrder = 2,
-                            Name = "Ticket Duo"
-                        },
-                        new
-                        {
-                            Id = 3,
-                            Description = "Ce ticket est valable pour 4 personnes",
-                            DisplayOrder = 3,
-                            Name = "Ticket Famille"
-                        });
                 });
 #pragma warning restore 612, 618
         }

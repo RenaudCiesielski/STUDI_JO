@@ -4,15 +4,15 @@ using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
 using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
-using jeuxOlympiques.Data;
+using JO.DataAccess.Data;
 
 #nullable disable
 
-namespace jeuxOlympiques.Migrations
+namespace JO.DataAccess.Migrations
 {
     [DbContext(typeof(ApplicationDbContext))]
-    [Migration("20240424164227_Category")]
-    partial class Category
+    [Migration("20240424104726_SeedCategoryTable")]
+    partial class SeedCategoryTable
     {
         /// <inheritdoc />
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
@@ -36,12 +36,12 @@ namespace jeuxOlympiques.Migrations
                         .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
+                    b.Property<int>("DisplayOrder")
+                        .HasColumnType("int");
+
                     b.Property<string>("Name")
                         .IsRequired()
                         .HasColumnType("nvarchar(max)");
-
-                    b.Property<int>("Price")
-                        .HasColumnType("int");
 
                     b.HasKey("Id");
 
@@ -52,22 +52,22 @@ namespace jeuxOlympiques.Migrations
                         {
                             Id = 1,
                             Description = "Ce ticket est valable pour 1 personne",
-                            Name = "Ticket Solo",
-                            Price = 195
+                            DisplayOrder = 1,
+                            Name = "Ticket Solo"
                         },
                         new
                         {
                             Id = 2,
                             Description = "Ce ticket est valable pour 2 personnes",
-                            Name = "Ticket Duo",
-                            Price = 350
+                            DisplayOrder = 2,
+                            Name = "Ticket Duo"
                         },
                         new
                         {
                             Id = 3,
                             Description = "Ce ticket est valable pour 4 personnes",
-                            Name = "Ticket Famille",
-                            Price = 650
+                            DisplayOrder = 3,
+                            Name = "Ticket Famille"
                         });
                 });
 #pragma warning restore 612, 618
