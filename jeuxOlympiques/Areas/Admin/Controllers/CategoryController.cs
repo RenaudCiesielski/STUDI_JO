@@ -3,14 +3,15 @@ using JO.DataAccess.Data;
 using JO.Models;
 using Microsoft.AspNetCore.Mvc;
 
-namespace jeuxOlympiques.Controllers
+namespace jeuxOlympiques.Areas.Admin.Controllers
 {
+    [Area("Admin")]
     public class CategoryController : Controller
     {
         private readonly IUnitOfWork _unitOfWork;
         public CategoryController(IUnitOfWork unitOfWork)
         {
-            _unitOfWork = unitOfWork; 
+            _unitOfWork = unitOfWork;
         }
         public IActionResult Index()
         {
@@ -33,19 +34,19 @@ namespace jeuxOlympiques.Controllers
                 TempData["success"] = "Ticket créé avec succès";
                 return RedirectToAction("Index");
             }
-            
+
             return View();
         }
 
         public IActionResult Edit(int? id)
         {
-            if(id==null || id == 0)
+            if (id == null || id == 0)
             {
                 return NotFound();
             }
-            Category? categoryFromDb = _unitOfWork.Category.Get(u=>u.Id==id);
+            Category? categoryFromDb = _unitOfWork.Category.Get(u => u.Id == id);
 
-            if(categoryFromDb == null)
+            if (categoryFromDb == null)
             {
                 return NotFound();
             }
@@ -89,10 +90,10 @@ namespace jeuxOlympiques.Controllers
             {
                 return NotFound();
             }
-                _unitOfWork.Category.Remove(obj);
-                _unitOfWork.Save();
-                TempData["success"] = "Ticket supprimé";
-                return RedirectToAction("Index");
-        }         
+            _unitOfWork.Category.Remove(obj);
+            _unitOfWork.Save();
+            TempData["success"] = "Ticket supprimé";
+            return RedirectToAction("Index");
+        }
     }
 }
