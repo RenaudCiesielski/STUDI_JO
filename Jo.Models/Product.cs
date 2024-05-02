@@ -18,7 +18,8 @@ namespace Jo.Models
         [Required]
         public string Description { get; set; }
 
-        [Required] 
+        [Required]
+        [Range(0, 1000)]
         public int Quantity { get; set; }
 
         [Required]
