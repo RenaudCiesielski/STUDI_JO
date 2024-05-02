@@ -11,10 +11,18 @@ namespace Jo.Models
     {
         [Key]
         public int Id { get; set; }
+
         [Required]
         public string Name { get; set; }
-        public string Description { get; set; }
+
         [Required]
+        public string Description { get; set; }
+
+        [Required] 
+        public int Quantity { get; set; }
+
+        [Required]
+        [Range(1, 9999)]
         public int Price { get; set; }
     }
 }
